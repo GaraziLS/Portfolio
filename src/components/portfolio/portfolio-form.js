@@ -40,7 +40,7 @@ export default class PortfolioForm extends Component {
   deleteImage(imageType) {
     axios
       .delete(
-        `https://api.devcamp.space/portfolio/delete-portfolio-image/${this.state
+        `https://api.devcamp.space/portfolio/delete-portfolio-image/${this.props.blog
           .id}?image_type=${imageType}`,
         { withCredentials: true }
       )
@@ -264,7 +264,7 @@ export default class PortfolioForm extends Component {
           )}
 
           {this.state.banner_image_url && this.state.editMode ? (
-            <div className="portfolio-manager-image-wrapper">
+            <div className="manager-image-wrapper">
               <img src={this.state.banner_image_url} />
 
               <div className="image-removal-link">
